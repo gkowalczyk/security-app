@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<div style="display: table; margin: 50px auto auto;">
+    <h1 th:inline="text" style="text-align: center">Witaj [[${session.user}]]!</h1>
+    GET /api/users do UserApi&nbsp;&nbsp;&nbsp;>>>&nbsp;&nbsp;&nbsp; <a href="/api/users">getUsers()</a><br/>
+    GET /api/users/multi do UserApi&nbsp;&nbsp;&nbsp;>>>&nbsp;&nbsp;&nbsp; <a href="/api/users/multi">getUsersMultiRoles()</a><br/>
+    GET /api/users/pre do UserApi, użytkownik <i>jk</i> &nbsp;&nbsp;&nbsp;>>>&nbsp;&nbsp;&nbsp; <a href="/api/users/pre/jk">getUserPreAuth(@PathVariable String username)</a><br/>
+    GET /api/users/pre do UserApi, użytkownik <i>pn</i> &nbsp;&nbsp;&nbsp;>>>&nbsp;&nbsp;&nbsp; <a href="/api/users/pre/pn">getUserPreAuth(@PathVariable String username)</a><br/><br/>
+    Baza danych &nbsp;&nbsp;&nbsp;>>>&nbsp;&nbsp;&nbsp; <a href="/console">H2 database</a> (po przejściu na stronę naciśnij <i>Connect</i>)
+    <br/><br/><br/><br/>              
+    <form th:action="@{/logout}" method="post">
+        <div style="margin: 20px 0px 20px 17px; display: table; margin: 0 auto;"><input type="submit" value="Sign Out"/></div>
+    </form>
+</div>
+</body>
+</html>
